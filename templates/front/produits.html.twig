@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+		<ul >
+			{% for prd in produits %}
+			<li>
+			  <div>
+				<a><img src="{{ prd.imageP }}" alt=""/></a>
+				<div class="caption">
+				  <h5>{{ prd.libelle }}</h5>
+				  <p> 
+					{{ prd.descpCourt }}
+				  </p>
+				    <h4 style="text-align:center"><a class="btn btn-primary" href="{{ path('affichier_produit', { 'id' : prd.id }) }}">Details</a></h4>
+				</div>
+			  </div>
+			</li>
+            {% endfor %}
+            </ul>
+
+{% endblock %}

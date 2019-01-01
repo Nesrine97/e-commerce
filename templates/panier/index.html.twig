@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Liste d'achat {{ controller_name }}!{% endblock %}
+
+{% block body %}
+    <h1>Liste d'achat</h1>
+
+   <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Libelle</th>
+                <th>DescpCourt</th>
+                <th>DescpLong</th>
+                <th>ImageP</th>
+                <th>ImageS1</th>
+                <th>ImageS2</th>
+                <th>Prix</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+        {% for produit in produits %}
+            <tr>
+                <td>{{ produit.id }}</td>
+                <td>{{ produit.libelle }}</td>
+                <td>{{ produit.descpCourt }}</td>
+                <td>{{ produit.descpLong }}</td>
+                <td>{{ produit.imageP }}</td>
+                <td>{{ produit.imageS1 }}</td>
+                <td>{{ produit.imageS2 }}</td>
+                <td>{{ produit.prix }}</td>
+               
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}categorie {% endblock %}
+
+{% block body %}
+
+{% for categorie in categories %}
+			<li>
+			  <div>
+				<a><img src="{{ categorie.image }}" alt=""/></a>
+				<div class="caption">
+				  <h5>{{ categorie.libelle }}</h5>
+				  <p> 
+					{{ categorie.descp | raw }}
+				  </p>
+				    <h4><a class="btn btn-success" href="{{ path('afficher_produits',{'id' : categorie.id }) }}">Vue</a></h4>
+				</div>
+			  </div>
+			</li>
+{% endfor %}
+
+
+
+{% endblock %}

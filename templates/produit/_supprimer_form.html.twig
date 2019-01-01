@@ -1,0 +1,11 @@
+{% block title %} nouveau Categorie {% endblock %}
+
+{% block body %}
+<form method="post" action="{{ path('produit_supprimer', {'id': produit.id}) }}" 
+onsubmit="return confirm('
+Êtes-vous sûr de bien vouloir supprimer cet élément?');">
+    <input type="hidden" name="_method" value="supprimer">
+    <input type="hidden" name="_token" value="{{ csrf_token('supprimer' ~ produit.id) }}">
+    <button class="btn">Supprimer</button>
+</form>
+{% endblock %}

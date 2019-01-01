@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Produit{% endblock %}
+
+{% block body %}
+
+
+
+{{ produit.libelle }}
+
+{{ produit.descpCourt }}
+
+{{ produit.descpLong | raw }}
+
+<img src="{{ produit.imageP }}" />
+
+<img src="{{ produit.imageS1 }}" />
+
+<img src="{{ produit.imageS2 }}" />
+
+{{ produit.prix }}
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
